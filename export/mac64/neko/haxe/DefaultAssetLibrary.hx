@@ -50,16 +50,34 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/data/map.csv", "assets/data/map.csv");
 		type.set ("assets/data/map.csv", AssetType.TEXT);
-		path.set ("assets/images/grass.png", "assets/images/grass.png");
-		type.set ("assets/images/grass.png", AssetType.IMAGE);
+		path.set ("assets/images/From other Games/grass.png", "assets/images/From other Games/grass.png");
+		type.set ("assets/images/From other Games/grass.png", AssetType.IMAGE);
+		path.set ("assets/images/From other Games/terrain.png", "assets/images/From other Games/terrain.png");
+		type.set ("assets/images/From other Games/terrain.png", AssetType.IMAGE);
+		path.set ("assets/images/From other Games/water.png", "assets/images/From other Games/water.png");
+		type.set ("assets/images/From other Games/water.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_1.png", "assets/images/From Photos/Snip20150228_1.png");
+		type.set ("assets/images/From Photos/Snip20150228_1.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_2.png", "assets/images/From Photos/Snip20150228_2.png");
+		type.set ("assets/images/From Photos/Snip20150228_2.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_3.png", "assets/images/From Photos/Snip20150228_3.png");
+		type.set ("assets/images/From Photos/Snip20150228_3.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_5.png", "assets/images/From Photos/Snip20150228_5.png");
+		type.set ("assets/images/From Photos/Snip20150228_5.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_6.png", "assets/images/From Photos/Snip20150228_6.png");
+		type.set ("assets/images/From Photos/Snip20150228_6.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_7.png", "assets/images/From Photos/Snip20150228_7.png");
+		type.set ("assets/images/From Photos/Snip20150228_7.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/Snip20150228_8.png", "assets/images/From Photos/Snip20150228_8.png");
+		type.set ("assets/images/From Photos/Snip20150228_8.png", AssetType.IMAGE);
+		path.set ("assets/images/From Photos/tileset1.png", "assets/images/From Photos/tileset1.png");
+		type.set ("assets/images/From Photos/tileset1.png", AssetType.IMAGE);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
 		path.set ("assets/images/terrain.png", "assets/images/terrain.png");
 		type.set ("assets/images/terrain.png", AssetType.IMAGE);
 		path.set ("assets/images/tileset.png", "assets/images/tileset.png");
 		type.set ("assets/images/tileset.png", AssetType.IMAGE);
-		path.set ("assets/images/water.png", "assets/images/water.png");
-		type.set ("assets/images/water.png", AssetType.IMAGE);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
@@ -79,7 +97,37 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/map.csv";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
-		id = "assets/images/grass.png";
+		id = "assets/images/From other Games/grass.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From other Games/terrain.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From other Games/water.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_1.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_2.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_3.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_5.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_6.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_7.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/Snip20150228_8.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/From Photos/tileset1.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
@@ -89,9 +137,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tileset.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/water.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/music/music-goes-here.txt";
@@ -124,9 +169,27 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -768,7 +831,25 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
+
+
+
 
 
 
