@@ -50,6 +50,40 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/data/map.csv", "assets/data/map.csv");
 		type.set ("assets/data/map.csv", AssetType.TEXT);
+		path.set ("assets/fonts/OpenSans-Bold.ttf", "assets/fonts/OpenSans-Bold.ttf");
+		type.set ("assets/fonts/OpenSans-Bold.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-BoldItalic.ttf", "assets/fonts/OpenSans-BoldItalic.ttf");
+		type.set ("assets/fonts/OpenSans-BoldItalic.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-ExtraBold.ttf", "assets/fonts/OpenSans-ExtraBold.ttf");
+		type.set ("assets/fonts/OpenSans-ExtraBold.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-ExtraBoldItalic.ttf", "assets/fonts/OpenSans-ExtraBoldItalic.ttf");
+		type.set ("assets/fonts/OpenSans-ExtraBoldItalic.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-Italic.ttf", "assets/fonts/OpenSans-Italic.ttf");
+		type.set ("assets/fonts/OpenSans-Italic.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-Light.ttf", "assets/fonts/OpenSans-Light.ttf");
+		type.set ("assets/fonts/OpenSans-Light.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-LightItalic.ttf", "assets/fonts/OpenSans-LightItalic.ttf");
+		type.set ("assets/fonts/OpenSans-LightItalic.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-Regular.ttf", "assets/fonts/OpenSans-Regular.ttf");
+		type.set ("assets/fonts/OpenSans-Regular.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-Semibold.ttf", "assets/fonts/OpenSans-Semibold.ttf");
+		type.set ("assets/fonts/OpenSans-Semibold.ttf", AssetType.FONT);
+		path.set ("assets/fonts/OpenSans-SemiboldItalic.ttf", "assets/fonts/OpenSans-SemiboldItalic.ttf");
+		type.set ("assets/fonts/OpenSans-SemiboldItalic.ttf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand-Bold.otf", "assets/fonts/Quicksand-Bold.otf");
+		type.set ("assets/fonts/Quicksand-Bold.otf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand-BoldItalic.otf", "assets/fonts/Quicksand-BoldItalic.otf");
+		type.set ("assets/fonts/Quicksand-BoldItalic.otf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand-Italic.otf", "assets/fonts/Quicksand-Italic.otf");
+		type.set ("assets/fonts/Quicksand-Italic.otf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand-Light.otf", "assets/fonts/Quicksand-Light.otf");
+		type.set ("assets/fonts/Quicksand-Light.otf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand-LightItalic.otf", "assets/fonts/Quicksand-LightItalic.otf");
+		type.set ("assets/fonts/Quicksand-LightItalic.otf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand-Regular.otf", "assets/fonts/Quicksand-Regular.otf");
+		type.set ("assets/fonts/Quicksand-Regular.otf", AssetType.FONT);
+		path.set ("assets/fonts/Quicksand_Dash.otf", "assets/fonts/Quicksand_Dash.otf");
+		type.set ("assets/fonts/Quicksand_Dash.otf", AssetType.FONT);
 		path.set ("assets/images/From other Games/grass.png", "assets/images/From other Games/grass.png");
 		type.set ("assets/images/From other Games/grass.png", AssetType.IMAGE);
 		path.set ("assets/images/From other Games/terrain.png", "assets/images/From other Games/terrain.png");
@@ -97,6 +131,57 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/map.csv";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/fonts/OpenSans-Bold.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-BoldItalic.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-ExtraBold.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-ExtraBoldItalic.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-Italic.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-Light.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-LightItalic.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-Regular.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-Semibold.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/OpenSans-SemiboldItalic.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand-Bold.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand-BoldItalic.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand-Italic.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand-Light.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand-LightItalic.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand-Regular.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/Quicksand_Dash.otf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
 		id = "assets/images/From other Games/grass.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -158,6 +243,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		Font.registerFont (__ASSET__assets_fonts_opensans_bold_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_bolditalic_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_extrabold_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_extrabolditalic_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_italic_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_light_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_lightitalic_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_regular_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_semibold_ttf);
+		Font.registerFont (__ASSET__assets_fonts_opensans_semibolditalic_ttf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_bold_otf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_bolditalic_otf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_italic_otf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_light_otf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_lightitalic_otf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_regular_otf);
+		Font.registerFont (__ASSET__assets_fonts_quicksand_dash_otf);
 		
 		
 		
@@ -181,6 +283,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -840,10 +959,44 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #elseif html5
 
 
 
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_bold_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Bold"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_bolditalic_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Bold Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_extrabold_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Extrabold"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_extrabolditalic_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Extrabold Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_italic_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_light_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Light"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_lightitalic_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Light Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_regular_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_semibold_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Semibold"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_opensans_semibolditalic_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Open Sans Semibold Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_bold_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Bold"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_bolditalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Bold Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_italic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_light_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_lightitalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light Italic"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_regular_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Regular"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_quicksand_dash_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Dash Regular"; } #end }
 
 
 
@@ -872,11 +1025,45 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+@:keep class __ASSET__assets_fonts_opensans_bold_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Bold.ttf"; fontName = "Open Sans Bold"; }}
+@:keep class __ASSET__assets_fonts_opensans_bolditalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-BoldItalic.ttf"; fontName = "Open Sans Bold Italic"; }}
+@:keep class __ASSET__assets_fonts_opensans_extrabold_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-ExtraBold.ttf"; fontName = "Open Sans Extrabold"; }}
+@:keep class __ASSET__assets_fonts_opensans_extrabolditalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-ExtraBoldItalic.ttf"; fontName = "Open Sans Extrabold Italic"; }}
+@:keep class __ASSET__assets_fonts_opensans_italic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Italic.ttf"; fontName = "Open Sans Italic"; }}
+@:keep class __ASSET__assets_fonts_opensans_light_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Light.ttf"; fontName = "Open Sans Light"; }}
+@:keep class __ASSET__assets_fonts_opensans_lightitalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-LightItalic.ttf"; fontName = "Open Sans Light Italic"; }}
+@:keep class __ASSET__assets_fonts_opensans_regular_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Regular.ttf"; fontName = "Open Sans"; }}
+@:keep class __ASSET__assets_fonts_opensans_semibold_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Semibold.ttf"; fontName = "Open Sans Semibold"; }}
+@:keep class __ASSET__assets_fonts_opensans_semibolditalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-SemiboldItalic.ttf"; fontName = "Open Sans Semibold Italic"; }}
+@:keep class __ASSET__assets_fonts_quicksand_bold_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Bold.otf"; fontName = "Quicksand Bold"; }}
+@:keep class __ASSET__assets_fonts_quicksand_bolditalic_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-BoldItalic.otf"; fontName = "Quicksand Bold Italic"; }}
+@:keep class __ASSET__assets_fonts_quicksand_italic_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Italic.otf"; fontName = "Quicksand Italic"; }}
+@:keep class __ASSET__assets_fonts_quicksand_light_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Light.otf"; fontName = "Quicksand Light"; }}
+@:keep class __ASSET__assets_fonts_quicksand_lightitalic_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-LightItalic.otf"; fontName = "Quicksand Light Italic"; }}
+@:keep class __ASSET__assets_fonts_quicksand_regular_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Regular.otf"; fontName = "Quicksand Regular"; }}
+@:keep class __ASSET__assets_fonts_quicksand_dash_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand_Dash.otf"; fontName = "Quicksand Dash Regular"; }}
 
 
 #else
 
 
+class __ASSET__assets_fonts_opensans_bold_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Bold.ttf"; fontName = "Open Sans Bold";  }}
+class __ASSET__assets_fonts_opensans_bolditalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-BoldItalic.ttf"; fontName = "Open Sans Bold Italic";  }}
+class __ASSET__assets_fonts_opensans_extrabold_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-ExtraBold.ttf"; fontName = "Open Sans Extrabold";  }}
+class __ASSET__assets_fonts_opensans_extrabolditalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-ExtraBoldItalic.ttf"; fontName = "Open Sans Extrabold Italic";  }}
+class __ASSET__assets_fonts_opensans_italic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Italic.ttf"; fontName = "Open Sans Italic";  }}
+class __ASSET__assets_fonts_opensans_light_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Light.ttf"; fontName = "Open Sans Light";  }}
+class __ASSET__assets_fonts_opensans_lightitalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-LightItalic.ttf"; fontName = "Open Sans Light Italic";  }}
+class __ASSET__assets_fonts_opensans_regular_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Regular.ttf"; fontName = "Open Sans";  }}
+class __ASSET__assets_fonts_opensans_semibold_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-Semibold.ttf"; fontName = "Open Sans Semibold";  }}
+class __ASSET__assets_fonts_opensans_semibolditalic_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/OpenSans-SemiboldItalic.ttf"; fontName = "Open Sans Semibold Italic";  }}
+class __ASSET__assets_fonts_quicksand_bold_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Bold.otf"; fontName = "Quicksand Bold";  }}
+class __ASSET__assets_fonts_quicksand_bolditalic_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-BoldItalic.otf"; fontName = "Quicksand Bold Italic";  }}
+class __ASSET__assets_fonts_quicksand_italic_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Italic.otf"; fontName = "Quicksand Italic";  }}
+class __ASSET__assets_fonts_quicksand_light_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Light.otf"; fontName = "Quicksand Light";  }}
+class __ASSET__assets_fonts_quicksand_lightitalic_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-LightItalic.otf"; fontName = "Quicksand Light Italic";  }}
+class __ASSET__assets_fonts_quicksand_regular_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand-Regular.otf"; fontName = "Quicksand Regular";  }}
+class __ASSET__assets_fonts_quicksand_dash_otf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/Quicksand_Dash.otf"; fontName = "Quicksand Dash Regular";  }}
 
 
 #end

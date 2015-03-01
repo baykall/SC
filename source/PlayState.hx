@@ -11,6 +11,11 @@ import flixel.util.FlxColor;
 import flixel.util.FlxMath;
 import openfl.Assets;
 
+enum State {
+	Paused;
+	Running;
+}
+
 
 class PlayState extends FlxState{
 	private var tileMap:FlxTilemap;
@@ -19,10 +24,13 @@ class PlayState extends FlxState{
 	static var LEVEL_WIDTH:Int = 50;
 	static var LEVEL_HEIGHT:Int = 50;
 	static var CAMERA_SPEED:Int = 8;
+
 	private var camera:FlxCamera;
 	private var cameraFocus:FlxSprite;
+	private var hud:HUD;
 
-	private var time:Int;
+	private var time:Time;
+	private var state:State;
 
 	override public function create():Void{
 		super.create();
@@ -38,7 +46,11 @@ class PlayState extends FlxState{
 		camera = FlxG.camera;
 		camera.follow(cameraFocus, FlxCamera.STYLE_LOCKON);
 
-		time = 0;
+		hud = new HUD();
+		add(hud);
+
+		time = new Time(12,"January",1678,20);
+		state = Running;
 	}
 
 
@@ -49,18 +61,37 @@ class PlayState extends FlxState{
 	override public function update():Void{
 		super.update();
 
-		time++;
 		move_camera();
 		bound_camera();
+		input_keyboard();
+		
+		if(state == Running)
+			update_time();
 
 		/*
-		if(time==100){
+		if(time%100==0){
 			tileMap.setTile(3, 3, 0, true);		
 		}
 		*/
 
 	}
 
+	public function input_keyboard(){
+	    if (FlxG.keys.justPressed.SPACE){
+			if(state == Running)
+				state = Paused;
+			else
+				state = Running;				
+	    }	
+
+	}
+
+	public function update_time():Void{
+		var calendar_day;
+		time.update();
+		calendar_day = time.calendar_day;
+		hud.update_time(calendar_day);
+	}
 
 	public function move_camera():Void{
 		if (FlxG.keys.anyPressed(["DOWN", "S"]))
