@@ -1,4 +1,4 @@
-package ;
+package;
 
 import flixel.FlxCamera;
 import flixel.FlxG;
@@ -16,37 +16,49 @@ enum State {
 	Running;
 }
 
-
 class PlayState extends FlxState{
-	private var tileMap:FlxTilemap;
-	static var TILE_WIDTH:Int = 32;
-	static var TILE_HEIGHT:Int = 32;
+	//Static Variables
+	static var TILE_WIDTH:Int = 128;
+	static var TILE_HEIGHT:Int = 128;
 	static var LEVEL_WIDTH:Int = 50;
 	static var LEVEL_HEIGHT:Int = 50;
+	static var PIXEL_WIDTH:Int = TILE_WIDTH * LEVEL_WIDTH;
+	static var PIXEL_HEIGHT:Int = TILE_HEIGHT * LEVEL_HEIGHT;	
 	static var CAMERA_SPEED:Int = 8;
+
+	//Graphics
+	private var terrain:FlxTilemap;
+	private var plants:FlxTilemap;
 
 	private var camera:FlxCamera;
 	private var cameraFocus:FlxSprite;
 	private var hud:HUD;
 
+	//Game engine
 	private var time:Time;
 	private var state:State;
 
 	override public function create():Void{
 		super.create();
 		
-		tileMap = new FlxTilemap();
-		tileMap.loadMap(Assets.getText("assets/data/map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);		
-		add(tileMap);
+		terrain = new FlxTilemap();
+		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
+		add(terrain);		
+		plants = new FlxTilemap();
+		plants.loadMap(Assets.getText("assets/data/plants_map.csv"), "assets/images/plants.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(plants);
 		
 		cameraFocus = new FlxSprite();
 		cameraFocus.makeGraphic(1, 1, FlxColor.TRANSPARENT);
+		cameraFocus.x = PIXEL_WIDTH/2;
+		cameraFocus.y = PIXEL_HEIGHT/2;
 		add(cameraFocus);
+
 		
 		camera = FlxG.camera;
 		camera.follow(cameraFocus, FlxCamera.STYLE_LOCKON);
 
-		hud = new HUD();
+		hud = new HUD(FlxG.width);
 		add(hud);
 
 		time = new Time(12,"January",1678,20);
@@ -68,11 +80,7 @@ class PlayState extends FlxState{
 		if(state == Running)
 			update_time();
 
-		/*
-		if(time%100==0){
-			tileMap.setTile(3, 3, 0, true);		
-		}
-		*/
+		//terrain.setTile(3, 3, 0, true);		
 
 	}
 
@@ -83,7 +91,6 @@ class PlayState extends FlxState{
 			else
 				state = Running;				
 	    }	
-
 	}
 
 	public function update_time():Void{

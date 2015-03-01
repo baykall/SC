@@ -8,8 +8,6 @@ class Time{
 	private var month_no:Int;
 	private var total_days:Int;			
     private var month:String;        
-    private var first_month:String;
-    private var last_month:String;
     public var calendar_day:String;
 
  	private var months : Array<String> = ["January","February","March","April","May","June","July","August","September","October","November","December"];
