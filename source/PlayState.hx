@@ -18,8 +18,8 @@ enum State {
 
 class PlayState extends FlxState{
 	//Static Variables
-	static var TILE_WIDTH:Int = 128;
-	static var TILE_HEIGHT:Int = 128;
+	static var TILE_WIDTH:Int = 64;
+	static var TILE_HEIGHT:Int = 64;
 	static var LEVEL_WIDTH:Int = 50;
 	static var LEVEL_HEIGHT:Int = 50;
 	static var PIXEL_WIDTH:Int = TILE_WIDTH * LEVEL_WIDTH;

@@ -86,8 +86,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/fonts/Quicksand-Regular.otf", AssetType.FONT);
 		path.set ("assets/fonts/Quicksand_Dash.otf", "assets/fonts/Quicksand_Dash.otf");
 		type.set ("assets/fonts/Quicksand_Dash.otf", AssetType.FONT);
-		path.set ("assets/images/background.png", "assets/images/background.png");
-		type.set ("assets/images/background.png", AssetType.IMAGE);
+		path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
+		type.set ("assets/images/From Internet/1f347.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/grass.png", "assets/images/From Internet/grass.png");
 		type.set ("assets/images/From Internet/grass.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/water.png", "assets/images/From Internet/water.png");
@@ -126,6 +126,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/plants.png", AssetType.IMAGE);
 		path.set ("assets/images/terrain.png", "assets/images/terrain.png");
 		type.set ("assets/images/terrain.png", AssetType.IMAGE);
+		path.set ("assets/images/Work/background.png", "assets/images/Work/background.png");
+		type.set ("assets/images/Work/background.png", AssetType.IMAGE);
+		path.set ("assets/images/Work/grape.png", "assets/images/Work/grape.png");
+		type.set ("assets/images/Work/grape.png", AssetType.IMAGE);
+		path.set ("assets/images/Work/grass.png", "assets/images/Work/grass.png");
+		type.set ("assets/images/Work/grass.png", AssetType.IMAGE);
+		path.set ("assets/images/Work/water.png", "assets/images/Work/water.png");
+		type.set ("assets/images/Work/water.png", AssetType.IMAGE);
+		path.set ("assets/images/Work/wheat.png", "assets/images/Work/wheat.png");
+		type.set ("assets/images/Work/wheat.png", AssetType.IMAGE);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
@@ -199,7 +209,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/fonts/Quicksand_Dash.otf";
 		path.set (id, id);
 		type.set (id, AssetType.FONT);
-		id = "assets/images/background.png";
+		id = "assets/images/From Internet/1f347.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/From Internet/grass.png";
@@ -257,6 +267,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/terrain.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Work/background.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Work/grape.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Work/grass.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Work/water.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Work/wheat.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/music/music-goes-here.txt";
@@ -322,9 +347,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1032,6 +1067,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
 #elseif html5
 
 
@@ -1054,6 +1094,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_lightitalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light Italic"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_regular_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Regular"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_dash_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Dash Regular"; } #end }
+
+
+
+
+
 
 
 

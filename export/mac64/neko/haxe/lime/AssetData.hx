@@ -56,8 +56,8 @@ class AssetData {
 			type.set ("assets/fonts/Quicksand-Regular.otf", Reflect.field (AssetType, "font".toUpperCase ()));
 			path.set ("assets/fonts/Quicksand_Dash.otf", "assets/fonts/Quicksand_Dash.otf");
 			type.set ("assets/fonts/Quicksand_Dash.otf", Reflect.field (AssetType, "font".toUpperCase ()));
-			path.set ("assets/images/background.png", "assets/images/background.png");
-			type.set ("assets/images/background.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
+			type.set ("assets/images/From Internet/1f347.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/From Internet/grass.png", "assets/images/From Internet/grass.png");
 			type.set ("assets/images/From Internet/grass.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/From Internet/water.png", "assets/images/From Internet/water.png");
@@ -96,6 +96,16 @@ class AssetData {
 			type.set ("assets/images/plants.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/terrain.png", "assets/images/terrain.png");
 			type.set ("assets/images/terrain.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Work/background.png", "assets/images/Work/background.png");
+			type.set ("assets/images/Work/background.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Work/grape.png", "assets/images/Work/grape.png");
+			type.set ("assets/images/Work/grape.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Work/grass.png", "assets/images/Work/grass.png");
+			type.set ("assets/images/Work/grass.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Work/water.png", "assets/images/Work/water.png");
+			type.set ("assets/images/Work/water.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Work/wheat.png", "assets/images/Work/wheat.png");
+			type.set ("assets/images/Work/wheat.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 			type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");

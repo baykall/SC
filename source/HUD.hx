@@ -10,13 +10,13 @@ class HUD extends FlxSpriteGroup{
 	private var timeDisplay:FlxText;	
 	private var time:String;	
 	
-	public function new(width){
+	public function new(screenWidth){
 		super();
 		scrollFactor.x = 0;
 		scrollFactor.y = 0;
 
 		var background = new FlxSprite();
-		background.makeGraphic(width, 40, FlxColor.BLACK, true);
+		background.makeGraphic(screenWidth, 40, FlxColor.BLACK, true);
 		add(background);
 
 		timeDisplay = new FlxText(2, 12);
