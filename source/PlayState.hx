@@ -17,7 +17,7 @@ enum State {
 }
 
 class PlayState extends FlxState{
-	//Static Variables
+	// Static variables
 	static var TILE_WIDTH:Int = 64;
 	static var TILE_HEIGHT:Int = 64;
 	static var LEVEL_WIDTH:Int = 50;
@@ -26,56 +26,36 @@ class PlayState extends FlxState{
 	static var PIXEL_HEIGHT:Int = TILE_HEIGHT * LEVEL_HEIGHT;	
 	static var CAMERA_SPEED:Int = 8;
 
-	//Graphics
+	// Graphics
 	private var terrain:FlxTilemap;
 	private var plants:FlxTilemap;
 	private var roads:FlxTilemap;	
 	private var cities:FlxTilemap;		
 
+	// Camera
 	private var camera:FlxCamera;
 	private var cameraFocus:FlxSprite;
+	
+	// HUD
 	private var hud:HUD;
 
-	//Game engine
+	// Buttons
+	private var optionsButton:FlxButton;	
+
+	// Game engine
 	private var time:Time;
 	private var state:State;
 
 	override public function create():Void{
 		super.create();
 		
-		terrain = new FlxTilemap();
-		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
-		add(terrain);	
+		init_graphics();	
+		init_camera();	
+		init_HUD();
+		init_buttons();
 
-		plants = new FlxTilemap();
-		plants.loadMap(Assets.getText("assets/data/resources_map.csv"), "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
-		add(plants);
-
-		roads = new FlxTilemap();
-		roads.loadMap(Assets.getText("assets/data/roads_map.csv"), "assets/images/roads.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
-		add(roads);	
-
-		cities = new FlxTilemap();
-		cities.loadMap(Assets.getText("assets/data/cities_map.csv"), "assets/images/cities.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
-		add(cities);				
-		
-		cameraFocus = new FlxSprite();
-		cameraFocus.makeGraphic(1, 1, FlxColor.TRANSPARENT);
-		cameraFocus.x = PIXEL_WIDTH/2;
-		cameraFocus.y = PIXEL_HEIGHT/2;
-		add(cameraFocus);
-
-		
-		camera = FlxG.camera;
-		camera.follow(cameraFocus, FlxCamera.STYLE_LOCKON);
-
-		hud = new HUD(FlxG.width);
-		add(hud);
-
-		time = new Time(12,"January",1678,20);
-		state = Running;
+		init_time();	
 	}
-
 
 	override public function destroy():Void{
 		super.destroy();
@@ -92,8 +72,55 @@ class PlayState extends FlxState{
 			update_time();
 
 		//terrain.setTile(3, 3, 0, true);		
-
 	}
+
+
+	public function init_graphics(){
+		terrain = new FlxTilemap();
+		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
+		add(terrain);	
+
+		plants = new FlxTilemap();
+		plants.loadMap(Assets.getText("assets/data/resources_map.csv"), "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(plants);
+
+		roads = new FlxTilemap();
+		roads.loadMap(Assets.getText("assets/data/roads_map.csv"), "assets/images/roads.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(roads);	
+
+		cities = new FlxTilemap();
+		cities.loadMap(Assets.getText("assets/data/cities_map.csv"), "assets/images/cities.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(cities);		
+	}
+
+	public function init_camera(){
+		cameraFocus = new FlxSprite();
+		cameraFocus.makeGraphic(1, 1, FlxColor.TRANSPARENT);
+		cameraFocus.x = PIXEL_WIDTH/2;
+		cameraFocus.y = PIXEL_HEIGHT/2;
+		add(cameraFocus);
+
+		camera = FlxG.camera;
+		camera.follow(cameraFocus, FlxCamera.STYLE_LOCKON);	
+	}
+
+	public function init_HUD(){
+		hud = new HUD();
+		add(hud);		
+	}
+
+	public function init_buttons(){
+		optionsButton = new FlxButton(FlxG.width - 100, 0, "Options", goOptions);
+		optionsButton.label.setFormat("assets/fonts/Quicksand-Bold.otf", 24, FlxColor.WHITE, "left");
+		optionsButton.loadGraphic("assets/images/empty.png");
+		add(optionsButton);			
+	}	
+
+	public function init_time(){
+		time = new Time(12,"January",1678,20);
+		state = Running;	
+	}	
+
 
 	public function input_keyboard(){
 	    if (FlxG.keys.justPressed.SPACE){
@@ -132,5 +159,9 @@ class PlayState extends FlxState{
 		else if (cameraFocus.y > LEVEL_HEIGHT * TILE_HEIGHT - FlxG.height / 2)
 			cameraFocus.y = LEVEL_HEIGHT * TILE_HEIGHT - FlxG.height / 2;
 	}
+
+	private function goOptions():Void {
+		FlxG.switchState(new MenuState());
+	}	
 
 }

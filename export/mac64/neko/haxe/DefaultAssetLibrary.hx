@@ -92,6 +92,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/fonts/Quicksand_Dash.otf", AssetType.FONT);
 		path.set ("assets/images/cities.png", "assets/images/cities.png");
 		type.set ("assets/images/cities.png", AssetType.IMAGE);
+		path.set ("assets/images/empty.png", "assets/images/empty.png");
+		type.set ("assets/images/empty.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
 		type.set ("assets/images/From Internet/1f347.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/grass.png", "assets/images/From Internet/grass.png");
@@ -246,6 +248,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.FONT);
 		id = "assets/images/cities.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/empty.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/From Internet/1f347.png";
@@ -442,9 +447,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1192,6 +1199,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
 
 
@@ -1216,6 +1224,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_lightitalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light Italic"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_regular_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Regular"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_dash_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Dash Regular"; } #end }
+
 
 
 

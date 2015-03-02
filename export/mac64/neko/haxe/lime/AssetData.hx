@@ -62,6 +62,8 @@ class AssetData {
 			type.set ("assets/fonts/Quicksand_Dash.otf", Reflect.field (AssetType, "font".toUpperCase ()));
 			path.set ("assets/images/cities.png", "assets/images/cities.png");
 			type.set ("assets/images/cities.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/empty.png", "assets/images/empty.png");
+			type.set ("assets/images/empty.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
 			type.set ("assets/images/From Internet/1f347.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/From Internet/grass.png", "assets/images/From Internet/grass.png");
