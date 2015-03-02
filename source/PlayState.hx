@@ -29,6 +29,8 @@ class PlayState extends FlxState{
 	//Graphics
 	private var terrain:FlxTilemap;
 	private var plants:FlxTilemap;
+	private var roads:FlxTilemap;	
+	private var cities:FlxTilemap;		
 
 	private var camera:FlxCamera;
 	private var cameraFocus:FlxSprite;
@@ -43,10 +45,19 @@ class PlayState extends FlxState{
 		
 		terrain = new FlxTilemap();
 		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
-		add(terrain);		
+		add(terrain);	
+
 		plants = new FlxTilemap();
-		plants.loadMap(Assets.getText("assets/data/plants_map.csv"), "assets/images/plants.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		plants.loadMap(Assets.getText("assets/data/resources_map.csv"), "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(plants);
+
+		roads = new FlxTilemap();
+		roads.loadMap(Assets.getText("assets/data/roads_map.csv"), "assets/images/roads.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(roads);	
+
+		cities = new FlxTilemap();
+		cities.loadMap(Assets.getText("assets/data/cities_map.csv"), "assets/images/cities.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(cities);				
 		
 		cameraFocus = new FlxSprite();
 		cameraFocus.makeGraphic(1, 1, FlxColor.TRANSPARENT);

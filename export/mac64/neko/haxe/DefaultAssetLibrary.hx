@@ -46,10 +46,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/data/cities_map.csv", "assets/data/cities_map.csv");
+		type.set ("assets/data/cities_map.csv", AssetType.TEXT);
 		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
-		path.set ("assets/data/plants_map.csv", "assets/data/plants_map.csv");
-		type.set ("assets/data/plants_map.csv", AssetType.TEXT);
+		path.set ("assets/data/resources_map.csv", "assets/data/resources_map.csv");
+		type.set ("assets/data/resources_map.csv", AssetType.TEXT);
+		path.set ("assets/data/roads_map.csv", "assets/data/roads_map.csv");
+		type.set ("assets/data/roads_map.csv", AssetType.TEXT);
 		path.set ("assets/data/terrain_map.csv", "assets/data/terrain_map.csv");
 		type.set ("assets/data/terrain_map.csv", AssetType.TEXT);
 		path.set ("assets/fonts/OpenSans-Bold.ttf", "assets/fonts/OpenSans-Bold.ttf");
@@ -86,6 +90,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/fonts/Quicksand-Regular.otf", AssetType.FONT);
 		path.set ("assets/fonts/Quicksand_Dash.otf", "assets/fonts/Quicksand_Dash.otf");
 		type.set ("assets/fonts/Quicksand_Dash.otf", AssetType.FONT);
+		path.set ("assets/images/cities.png", "assets/images/cities.png");
+		type.set ("assets/images/cities.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
 		type.set ("assets/images/From Internet/1f347.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/grass.png", "assets/images/From Internet/grass.png");
@@ -122,20 +128,44 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/From Photos/tileset1.png", AssetType.IMAGE);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
-		path.set ("assets/images/plants.png", "assets/images/plants.png");
-		type.set ("assets/images/plants.png", AssetType.IMAGE);
+		path.set ("assets/images/resources.png", "assets/images/resources.png");
+		type.set ("assets/images/resources.png", AssetType.IMAGE);
+		path.set ("assets/images/roads.png", "assets/images/roads.png");
+		type.set ("assets/images/roads.png", AssetType.IMAGE);
 		path.set ("assets/images/terrain.png", "assets/images/terrain.png");
 		type.set ("assets/images/terrain.png", AssetType.IMAGE);
-		path.set ("assets/images/Work/background.png", "assets/images/Work/background.png");
-		type.set ("assets/images/Work/background.png", AssetType.IMAGE);
-		path.set ("assets/images/Work/grape.png", "assets/images/Work/grape.png");
-		type.set ("assets/images/Work/grape.png", AssetType.IMAGE);
-		path.set ("assets/images/Work/grass.png", "assets/images/Work/grass.png");
-		type.set ("assets/images/Work/grass.png", AssetType.IMAGE);
-		path.set ("assets/images/Work/water.png", "assets/images/Work/water.png");
-		type.set ("assets/images/Work/water.png", AssetType.IMAGE);
-		path.set ("assets/images/Work/wheat.png", "assets/images/Work/wheat.png");
-		type.set ("assets/images/Work/wheat.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/City.png", "assets/images/Tiles/City.png");
+		type.set ("assets/images/Tiles/City.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/cow.png", "assets/images/Tiles/cow.png");
+		type.set ("assets/images/Tiles/cow.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/fish.png", "assets/images/Tiles/fish.png");
+		type.set ("assets/images/Tiles/fish.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/grape.png", "assets/images/Tiles/grape.png");
+		type.set ("assets/images/Tiles/grape.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/grass.png", "assets/images/Tiles/grass.png");
+		type.set ("assets/images/Tiles/grass.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/rice.png", "assets/images/Tiles/rice.png");
+		type.set ("assets/images/Tiles/rice.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road horizontal.png", "assets/images/Tiles/road horizontal.png");
+		type.set ("assets/images/Tiles/road horizontal.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road junction 4.png", "assets/images/Tiles/road junction 4.png");
+		type.set ("assets/images/Tiles/road junction 4.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road junction down.png", "assets/images/Tiles/road junction down.png");
+		type.set ("assets/images/Tiles/road junction down.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road junction left.png", "assets/images/Tiles/road junction left.png");
+		type.set ("assets/images/Tiles/road junction left.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road junction right.png", "assets/images/Tiles/road junction right.png");
+		type.set ("assets/images/Tiles/road junction right.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road junction up.png", "assets/images/Tiles/road junction up.png");
+		type.set ("assets/images/Tiles/road junction up.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road vertical.png", "assets/images/Tiles/road vertical.png");
+		type.set ("assets/images/Tiles/road vertical.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/tomato.png", "assets/images/Tiles/tomato.png");
+		type.set ("assets/images/Tiles/tomato.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/water.png", "assets/images/Tiles/water.png");
+		type.set ("assets/images/Tiles/water.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/wheat.png", "assets/images/Tiles/wheat.png");
+		type.set ("assets/images/Tiles/wheat.png", AssetType.IMAGE);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
@@ -149,10 +179,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/data/cities_map.csv";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
 		id = "assets/data/data-goes-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
-		id = "assets/data/plants_map.csv";
+		id = "assets/data/resources_map.csv";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/data/roads_map.csv";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "assets/data/terrain_map.csv";
@@ -209,6 +245,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/fonts/Quicksand_Dash.otf";
 		path.set (id, id);
 		type.set (id, AssetType.FONT);
+		id = "assets/images/cities.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/From Internet/1f347.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -263,25 +302,61 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
-		id = "assets/images/plants.png";
+		id = "assets/images/resources.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/roads.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/terrain.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Work/background.png";
+		id = "assets/images/Tiles/City.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Work/grape.png";
+		id = "assets/images/Tiles/cow.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Work/grass.png";
+		id = "assets/images/Tiles/fish.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Work/water.png";
+		id = "assets/images/Tiles/grape.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Work/wheat.png";
+		id = "assets/images/Tiles/grass.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/rice.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road horizontal.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road junction 4.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road junction down.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road junction left.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road junction right.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road junction up.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road vertical.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/tomato.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/water.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/wheat.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/music/music-goes-here.txt";
@@ -299,6 +374,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		#else
+		
+		
 		
 		
 		
@@ -352,9 +429,37 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1072,7 +1177,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #elseif html5
+
+
 
 
 
@@ -1094,6 +1216,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_lightitalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light Italic"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_regular_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Regular"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_dash_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Dash Regular"; } #end }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
