@@ -35,12 +35,20 @@ class PlayState extends FlxState{
 	// Camera
 	private var camera:FlxCamera;
 	private var cameraFocus:FlxSprite;
+
+	// Graphic Parameters
+	private var font:String;
+	private var topButtonsSize:Int;
+	private var timeSize:Int;
+	private var HUDHeight:Int;
 	
 	// HUD
 	private var hud:HUD;
 
-	// Buttons
-	private var optionsButton:FlxButton;	
+	// Buttons	
+	private var companyButton:FlxButton;	
+	private var resourcesButton:FlxButton;	
+	private var optionsButton:FlxButton;
 
 	// Game engine
 	private var time:Time;
@@ -49,6 +57,7 @@ class PlayState extends FlxState{
 	override public function create():Void{
 		super.create();
 		
+		init_parameters();
 		init_graphics();	
 		init_camera();	
 		init_HUD();
@@ -74,6 +83,12 @@ class PlayState extends FlxState{
 		//terrain.setTile(3, 3, 0, true);		
 	}
 
+	public function init_parameters(){
+		font = "Quicksand-Bold.otf";
+		topButtonsSize = 24;
+		timeSize = 18;
+		HUDHeight = 40;
+	}
 
 	public function init_graphics(){
 		terrain = new FlxTilemap();
@@ -105,19 +120,29 @@ class PlayState extends FlxState{
 	}
 
 	public function init_HUD(){
-		hud = new HUD();
+		hud = new HUD(font, timeSize, HUDHeight);
 		add(hud);		
 	}
 
 	public function init_buttons(){
-		optionsButton = new FlxButton(FlxG.width - 100, 0, "Options", goOptions);
-		optionsButton.label.setFormat("assets/fonts/Quicksand-Bold.otf", 24, FlxColor.WHITE, "left");
+		companyButton = new FlxButton(10, 0, "Company", goCompany);
+		companyButton.label.setFormat("assets/fonts/" + font, topButtonsSize, FlxColor.WHITE, "left");
+		companyButton.loadGraphic("assets/images/empty.png");
+		add(companyButton);	
+
+		resourcesButton = new FlxButton(160, 0, "Resources", goResources);
+		resourcesButton.label.setFormat("assets/fonts/" + font, topButtonsSize, FlxColor.WHITE, "left");
+		resourcesButton.loadGraphic("assets/images/empty.png");
+		add(resourcesButton);	
+
+		optionsButton = new FlxButton(310, 0, "Options", goOptions);
+		optionsButton.label.setFormat("assets/fonts/" + font, topButtonsSize, FlxColor.WHITE, "left");
 		optionsButton.loadGraphic("assets/images/empty.png");
-		add(optionsButton);			
+		add(optionsButton);							
 	}	
 
 	public function init_time(){
-		time = new Time(12,"January",1678,20);
+		time = new Time(12, "January", 1678, 100);
 		state = Running;	
 	}	
 
@@ -160,8 +185,16 @@ class PlayState extends FlxState{
 			cameraFocus.y = LEVEL_HEIGHT * TILE_HEIGHT - FlxG.height / 2;
 	}
 
-	private function goOptions():Void {
+	private function goCompany():Void {
 		FlxG.switchState(new MenuState());
 	}	
+
+	private function goResources():Void {
+		FlxG.switchState(new MenuState());
+	}	
+
+	private function goOptions():Void {
+		FlxG.switchState(new MenuState());
+	}			
 
 }
