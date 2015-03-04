@@ -5,9 +5,9 @@ class Time{
 	private var cpu_time:Int;
 	private var day:Int;
 	private var year:Int;
-	private var month_no:Int;
-	private var total_days:Int;			
-    private var month:String;        
+	private var month_no:Int;		
+    private var month:String;
+	public var total_days:Int;	            
     public var calendar_day:String;
 
  	private var months : Array<String> = ["January","February","March","April","May","June","July","August","September","October","November","December"];

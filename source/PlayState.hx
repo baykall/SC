@@ -9,6 +9,10 @@ import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 import flixel.util.FlxMath;
+import flixel.util.FlxPath;
+import flixel.util.FlxPoint;
+import flixel.FlxObject;
+
 import openfl.Assets;
 
 enum State {
@@ -50,9 +54,16 @@ class PlayState extends FlxState{
 	private var resourcesButton:FlxButton;	
 	private var optionsButton:FlxButton;
 
+	// Sprites
+	//private var trucks:Array<FlxSprite>;
+	//private var truck_paths:Array<FlxPath>;
+	private var truck:FlxSprite;
+	private var truck_path:FlxPath;	
+
 	// Game engine
 	private var time:Time;
 	private var state:State;
+
 
 	override public function create():Void{
 		super.create();
@@ -62,8 +73,9 @@ class PlayState extends FlxState{
 		init_camera();	
 		init_HUD();
 		init_buttons();
-
 		init_time();	
+
+		create_truck();
 	}
 
 	override public function destroy():Void{
@@ -79,8 +91,22 @@ class PlayState extends FlxState{
 		
 		if(state == Running)
 			update_time();
+	
+	}
 
-		//terrain.setTile(3, 3, 0, true);		
+	public function create_truck(){
+
+		truck = new FlxSprite(1500, 1500);
+		truck.loadGraphic("assets/images/truck.png", true, 64, 64);
+		add(truck);
+
+		truck_path = new FlxPath();		
+	
+		var nodes:Array<FlxPoint> = terrain.findPath(FlxPoint.get(truck.x, truck.y), FlxPoint.get(1500,1300));
+
+		if (nodes != null) 
+			truck_path.start(truck, nodes);
+		
 	}
 
 	public function init_parameters(){
@@ -95,6 +121,10 @@ class PlayState extends FlxState{
 		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
 		add(terrain);	
 
+		terrain.setTileProperties(0, FlxObject.NONE);
+		terrain.setTileProperties(1, FlxObject.NONE);
+		terrain.setTileProperties(2, FlxObject.NONE);		
+
 		plants = new FlxTilemap();
 		plants.loadMap(Assets.getText("assets/data/resources_map.csv"), "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(plants);
@@ -106,6 +136,7 @@ class PlayState extends FlxState{
 		cities = new FlxTilemap();
 		cities.loadMap(Assets.getText("assets/data/cities_map.csv"), "assets/images/cities.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(cities);		
+
 	}
 
 	public function init_camera(){
@@ -145,7 +176,6 @@ class PlayState extends FlxState{
 		time = new Time(12, "January", 1678, 100);
 		state = Running;	
 	}	
-
 
 	public function input_keyboard(){
 	    if (FlxG.keys.justPressed.SPACE){

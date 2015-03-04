@@ -62,8 +62,6 @@ class AssetData {
 			type.set ("assets/fonts/Quicksand_Dash.otf", Reflect.field (AssetType, "font".toUpperCase ()));
 			path.set ("assets/images/cities.png", "assets/images/cities.png");
 			type.set ("assets/images/cities.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			path.set ("assets/images/empty copy.png", "assets/images/empty copy.png");
-			type.set ("assets/images/empty copy.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/empty.png", "assets/images/empty.png");
 			type.set ("assets/images/empty.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
@@ -120,6 +118,8 @@ class AssetData {
 			type.set ("assets/images/Tiles/grass.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/rice.png", "assets/images/Tiles/rice.png");
 			type.set ("assets/images/Tiles/rice.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Tiles/road horizontal truck.png", "assets/images/Tiles/road horizontal truck.png");
+			type.set ("assets/images/Tiles/road horizontal truck.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/road horizontal.png", "assets/images/Tiles/road horizontal.png");
 			type.set ("assets/images/Tiles/road horizontal.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/road junction 4.png", "assets/images/Tiles/road junction 4.png");
@@ -136,10 +136,14 @@ class AssetData {
 			type.set ("assets/images/Tiles/road vertical.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/tomato.png", "assets/images/Tiles/tomato.png");
 			type.set ("assets/images/Tiles/tomato.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Tiles/truck left.png", "assets/images/Tiles/truck left.png");
+			type.set ("assets/images/Tiles/truck left.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/water.png", "assets/images/Tiles/water.png");
 			type.set ("assets/images/Tiles/water.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/wheat.png", "assets/images/Tiles/wheat.png");
 			type.set ("assets/images/Tiles/wheat.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/truck.png", "assets/images/truck.png");
+			type.set ("assets/images/truck.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 			type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");

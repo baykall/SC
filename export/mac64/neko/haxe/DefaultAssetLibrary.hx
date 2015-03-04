@@ -92,8 +92,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/fonts/Quicksand_Dash.otf", AssetType.FONT);
 		path.set ("assets/images/cities.png", "assets/images/cities.png");
 		type.set ("assets/images/cities.png", AssetType.IMAGE);
-		path.set ("assets/images/empty copy.png", "assets/images/empty copy.png");
-		type.set ("assets/images/empty copy.png", AssetType.IMAGE);
 		path.set ("assets/images/empty.png", "assets/images/empty.png");
 		type.set ("assets/images/empty.png", AssetType.IMAGE);
 		path.set ("assets/images/From Internet/1f347.png", "assets/images/From Internet/1f347.png");
@@ -150,6 +148,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/Tiles/grass.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/rice.png", "assets/images/Tiles/rice.png");
 		type.set ("assets/images/Tiles/rice.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/road horizontal truck.png", "assets/images/Tiles/road horizontal truck.png");
+		type.set ("assets/images/Tiles/road horizontal truck.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/road horizontal.png", "assets/images/Tiles/road horizontal.png");
 		type.set ("assets/images/Tiles/road horizontal.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/road junction 4.png", "assets/images/Tiles/road junction 4.png");
@@ -166,10 +166,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/Tiles/road vertical.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/tomato.png", "assets/images/Tiles/tomato.png");
 		type.set ("assets/images/Tiles/tomato.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/truck left.png", "assets/images/Tiles/truck left.png");
+		type.set ("assets/images/Tiles/truck left.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/water.png", "assets/images/Tiles/water.png");
 		type.set ("assets/images/Tiles/water.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/wheat.png", "assets/images/Tiles/wheat.png");
 		type.set ("assets/images/Tiles/wheat.png", AssetType.IMAGE);
+		path.set ("assets/images/truck.png", "assets/images/truck.png");
+		type.set ("assets/images/truck.png", AssetType.IMAGE);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
@@ -250,9 +254,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.FONT);
 		id = "assets/images/cities.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/empty copy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/empty.png";
@@ -339,6 +340,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/Tiles/rice.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/road horizontal truck.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Tiles/road horizontal.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -363,10 +367,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/Tiles/tomato.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/truck left.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Tiles/water.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Tiles/wheat.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/truck.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/music/music-goes-here.txt";
@@ -454,9 +464,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1208,6 +1222,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 #elseif html5
 
 
@@ -1232,6 +1248,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_lightitalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light Italic"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_regular_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Regular"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_dash_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Dash Regular"; } #end }
+
+
 
 
 
