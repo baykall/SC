@@ -138,6 +138,12 @@ class AssetData {
 			type.set ("assets/images/Tiles/tomato.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/truck left.png", "assets/images/Tiles/truck left.png");
 			type.set ("assets/images/Tiles/truck left.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Tiles/truck right copy.png", "assets/images/Tiles/truck right copy.png");
+			type.set ("assets/images/Tiles/truck right copy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Tiles/truck right.png", "assets/images/Tiles/truck right.png");
+			type.set ("assets/images/Tiles/truck right.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Tiles/truck up.png", "assets/images/Tiles/truck up.png");
+			type.set ("assets/images/Tiles/truck up.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/water.png", "assets/images/Tiles/water.png");
 			type.set ("assets/images/Tiles/water.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles/wheat.png", "assets/images/Tiles/wheat.png");

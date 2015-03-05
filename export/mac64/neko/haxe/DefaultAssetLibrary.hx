@@ -168,6 +168,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/Tiles/tomato.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/truck left.png", "assets/images/Tiles/truck left.png");
 		type.set ("assets/images/Tiles/truck left.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/truck right copy.png", "assets/images/Tiles/truck right copy.png");
+		type.set ("assets/images/Tiles/truck right copy.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/truck right.png", "assets/images/Tiles/truck right.png");
+		type.set ("assets/images/Tiles/truck right.png", AssetType.IMAGE);
+		path.set ("assets/images/Tiles/truck up.png", "assets/images/Tiles/truck up.png");
+		type.set ("assets/images/Tiles/truck up.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/water.png", "assets/images/Tiles/water.png");
 		type.set ("assets/images/Tiles/water.png", AssetType.IMAGE);
 		path.set ("assets/images/Tiles/wheat.png", "assets/images/Tiles/wheat.png");
@@ -370,6 +376,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/Tiles/truck left.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/truck right copy.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/truck right.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Tiles/truck up.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Tiles/water.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -466,9 +481,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1224,6 +1245,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
 #elseif html5
 
 
@@ -1248,6 +1272,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_lightitalic_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Light Italic"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_regular_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Regular"; } #end }
 @:keep #if display private #end class __ASSET__assets_fonts_quicksand_dash_otf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Quicksand Dash Regular"; } #end }
+
+
+
 
 
 

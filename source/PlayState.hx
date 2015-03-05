@@ -91,18 +91,39 @@ class PlayState extends FlxState{
 		
 		if(state == Running)
 			update_time();
+
+		if (!truck_path.finished && truck_path.nodes!=null) {
+			if (truck_path.angle == 0)
+				truck.animation.play("up");
+			else if (truck_path.angle == 180) 
+				truck.animation.play("down");
+			else if (truck_path.angle == 90) 
+				truck.animation.play("right");
+			else if (truck_path.angle == -90) 
+				truck.animation.play("left");
+			
+		} 
+		else {
+			truck.animation.curAnim.curFrame = 0;
+			truck.animation.curAnim.stop();
+		}			
 	
 	}
 
 	public function create_truck(){
 
-		truck = new FlxSprite(1500, 1500);
+		truck = new FlxSprite(25 * TILE_WIDTH, 33 * TILE_HEIGHT);
 		truck.loadGraphic("assets/images/truck.png", true, 64, 64);
+		truck.animation.add("left", [0]);	
+		truck.animation.add("right", [1]);			
+		truck.animation.add("down", [2]);
+		truck.animation.add("up", [3]);		
+		
 		add(truck);
 
 		truck_path = new FlxPath();		
 	
-		var nodes:Array<FlxPoint> = terrain.findPath(FlxPoint.get(truck.x, truck.y), FlxPoint.get(1500,1300));
+		var nodes:Array<FlxPoint> = roads.findPath(FlxPoint.get(truck.x, truck.y), FlxPoint.get(14.5 * TILE_WIDTH, 5.5 * TILE_HEIGHT));
 
 		if (nodes != null) 
 			truck_path.start(truck, nodes);
@@ -120,11 +141,7 @@ class PlayState extends FlxState{
 		terrain = new FlxTilemap();
 		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
 		add(terrain);	
-
-		terrain.setTileProperties(0, FlxObject.NONE);
-		terrain.setTileProperties(1, FlxObject.NONE);
-		terrain.setTileProperties(2, FlxObject.NONE);		
-
+	
 		plants = new FlxTilemap();
 		plants.loadMap(Assets.getText("assets/data/resources_map.csv"), "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(plants);
@@ -132,6 +149,10 @@ class PlayState extends FlxState{
 		roads = new FlxTilemap();
 		roads.loadMap(Assets.getText("assets/data/roads_map.csv"), "assets/images/roads.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(roads);	
+
+		roads.setTileProperties(0, FlxObject.ANY);	
+		for(i in 1...8)
+			roads.setTileProperties(i, FlxObject.NONE);			
 
 		cities = new FlxTilemap();
 		cities.loadMap(Assets.getText("assets/data/cities_map.csv"), "assets/images/cities.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
@@ -143,7 +164,7 @@ class PlayState extends FlxState{
 		cameraFocus = new FlxSprite();
 		cameraFocus.makeGraphic(1, 1, FlxColor.TRANSPARENT);
 		cameraFocus.x = PIXEL_WIDTH/2;
-		cameraFocus.y = PIXEL_HEIGHT/2;
+		cameraFocus.y = PIXEL_HEIGHT/2 + 400;
 		add(cameraFocus);
 
 		camera = FlxG.camera;
