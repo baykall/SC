@@ -55,11 +55,10 @@ class PlayState extends FlxState{
 	private var optionsButton:FlxButton;
 
 	// Sprites
-	//private var trucks:Array<FlxSprite>;
-	//private var truck_paths:Array<FlxPath>;
-	private var truck:FlxSprite;
-	private var truck_path:FlxPath;	
+	private var trucks:Array<FlxSprite>;
+	private var truck_paths:Array<FlxPath>;
 
+	
 	// Game engine
 	private var time:Time;
 	private var state:State;
@@ -68,6 +67,7 @@ class PlayState extends FlxState{
 	override public function create():Void{
 		super.create();
 		
+		init_variables();
 		init_parameters();
 		init_graphics();	
 		init_camera();	
@@ -76,6 +76,8 @@ class PlayState extends FlxState{
 		init_time();	
 
 		ship_truck(26,34,15,6);
+		ship_truck(30,19,15,20);
+		ship_truck(30,6,17,20);		
 	}
 
 	override public function destroy():Void{
@@ -90,6 +92,7 @@ class PlayState extends FlxState{
 		input_keyboard();
 		
 		move_trucks();
+		remove_arrived_trucks();
 
 		if(state == Running)
 			update_time();
@@ -97,24 +100,37 @@ class PlayState extends FlxState{
 	}
 
 	public function move_trucks(){
-		if (!truck_path.finished && truck_path.nodes!=null) {
-			if (truck_path.angle == 0)
-				truck.animation.play("up");
-			else if (truck_path.angle == 180) 
-				truck.animation.play("down");
-			else if (truck_path.angle == 90) 
-				truck.animation.play("right");
-			else if (truck_path.angle == -90) 
-				truck.animation.play("left");
-			
-		} 
-		else {
-			truck.animation.curAnim.curFrame = 0;
-			truck.animation.curAnim.stop();
+		for(i in 0...trucks.length){
+			if (!truck_paths[i].finished && truck_paths[i].nodes!=null) {
+				if (truck_paths[i].angle == 0)
+					trucks[i].animation.play("up");
+				else if (truck_paths[i].angle == 180) 
+					trucks[i].animation.play("down");
+				else if (truck_paths[i].angle == 90) 
+					trucks[i].animation.play("right");
+				else if (truck_paths[i].angle == -90) 
+					trucks[i].animation.play("left");
+				
+			} 
+			else {
+				trucks[i].animation.curAnim.curFrame = 0;
+				trucks[i].animation.curAnim.stop();
+			}
 		}		
 	}
 
+	public function remove_arrived_trucks(){
+		for(i in 0...trucks.length){	
+			if (truck_paths[i].finished){
+				remove(trucks[i]);
+			} 	
+		}
+	}	
+
 	public function ship_truck(from_x,from_y,to_x,to_y){
+
+		var truck:FlxSprite;
+		var truck_path:FlxPath;
 
 		truck = new FlxSprite((from_x - 1) * TILE_WIDTH, (from_y - 1) * TILE_HEIGHT);
 		truck.loadGraphic("assets/images/truck.png", true, TILE_WIDTH, TILE_HEIGHT);
@@ -123,35 +139,23 @@ class PlayState extends FlxState{
 		truck.animation.add("down", [2]);
 		truck.animation.add("up", [3]);		
 		
-		add(truck);
+		trucks.push(truck);
 
-		truck_path = new FlxPath();		
+		add(trucks[trucks.length - 1]);
+
+		truck_path = new FlxPath();	
+		truck_paths.push(truck_path);	
 	
 		var nodes:Array<FlxPoint> = roads.findPath(FlxPoint.get(truck.x, truck.y), FlxPoint.get((to_x - 0.5) * TILE_WIDTH, (to_y - 0.5) * TILE_HEIGHT));
 
 		if (nodes != null) 
-			truck_path.start(truck, nodes);
-		
+			truck_paths[truck_paths.length - 1].start(trucks[trucks.length - 1], nodes);
+
 	}
 
-	public function create_truck(){
-
-		truck = new FlxSprite(25 * TILE_WIDTH, 33 * TILE_HEIGHT);
-		truck.loadGraphic("assets/images/truck.png", true, 64, 64);
-		truck.animation.add("left", [0]);	
-		truck.animation.add("right", [1]);			
-		truck.animation.add("down", [2]);
-		truck.animation.add("up", [3]);		
-		
-		add(truck);
-
-		truck_path = new FlxPath();		
-	
-		var nodes:Array<FlxPoint> = roads.findPath(FlxPoint.get(truck.x, truck.y), FlxPoint.get(14.5 * TILE_WIDTH, 5.5 * TILE_HEIGHT));
-
-		if (nodes != null) 
-			truck_path.start(truck, nodes);
-		
+	public function init_variables(){
+		trucks = new Array<FlxSprite>();
+		truck_paths = new Array<FlxPath>();
 	}
 
 	public function init_parameters(){
