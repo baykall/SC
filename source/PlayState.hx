@@ -120,10 +120,19 @@ class PlayState extends FlxState{
 	}
 
 	public function remove_arrived_trucks(){
+		var truck_no:Int;
+
+		truck_no = -1;
 		for(i in 0...trucks.length){	
 			if (truck_paths[i].finished){
-				remove(trucks[i]);
-			} 	
+				remove(trucks[i]);		
+				truck_no = i;	
+			}
+		}
+
+		if(truck_no >= 0){
+			trucks.splice(truck_no,1);
+			truck_paths.splice(truck_no,1);
 		}
 	}	
 
