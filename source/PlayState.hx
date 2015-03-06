@@ -75,7 +75,7 @@ class PlayState extends FlxState{
 		init_buttons();
 		init_time();	
 
-		create_truck();
+		ship_truck(26,34,15,6);
 	}
 
 	override public function destroy():Void{
@@ -89,9 +89,14 @@ class PlayState extends FlxState{
 		bound_camera();
 		input_keyboard();
 		
+		move_trucks();
+
 		if(state == Running)
 			update_time();
+	
+	}
 
+	public function move_trucks(){
 		if (!truck_path.finished && truck_path.nodes!=null) {
 			if (truck_path.angle == 0)
 				truck.animation.play("up");
@@ -106,8 +111,27 @@ class PlayState extends FlxState{
 		else {
 			truck.animation.curAnim.curFrame = 0;
 			truck.animation.curAnim.stop();
-		}			
+		}		
+	}
+
+	public function ship_truck(from_x,from_y,to_x,to_y){
+
+		truck = new FlxSprite((from_x - 1) * TILE_WIDTH, (from_y - 1) * TILE_HEIGHT);
+		truck.loadGraphic("assets/images/truck.png", true, TILE_WIDTH, TILE_HEIGHT);
+		truck.animation.add("left", [0]);	
+		truck.animation.add("right", [1]);			
+		truck.animation.add("down", [2]);
+		truck.animation.add("up", [3]);		
+		
+		add(truck);
+
+		truck_path = new FlxPath();		
 	
+		var nodes:Array<FlxPoint> = roads.findPath(FlxPoint.get(truck.x, truck.y), FlxPoint.get((to_x - 0.5) * TILE_WIDTH, (to_y - 0.5) * TILE_HEIGHT));
+
+		if (nodes != null) 
+			truck_path.start(truck, nodes);
+		
 	}
 
 	public function create_truck(){
@@ -164,7 +188,7 @@ class PlayState extends FlxState{
 		cameraFocus = new FlxSprite();
 		cameraFocus.makeGraphic(1, 1, FlxColor.TRANSPARENT);
 		cameraFocus.x = PIXEL_WIDTH/2;
-		cameraFocus.y = PIXEL_HEIGHT/2 + 400;
+		cameraFocus.y = PIXEL_HEIGHT/2;
 		add(cameraFocus);
 
 		camera = FlxG.camera;
@@ -235,6 +259,7 @@ class PlayState extends FlxState{
 		else if (cameraFocus.y > LEVEL_HEIGHT * TILE_HEIGHT - FlxG.height / 2)
 			cameraFocus.y = LEVEL_HEIGHT * TILE_HEIGHT - FlxG.height / 2;
 	}
+
 
 	private function goCompany():Void {
 		FlxG.switchState(new MenuState());
