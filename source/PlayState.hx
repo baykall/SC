@@ -22,8 +22,8 @@ enum State {
 
 class PlayState extends FlxState{
 	// Static variables
-	static var TILE_WIDTH:Int = 64;
-	static var TILE_HEIGHT:Int = 64;
+	public static var TILE_WIDTH:Int = 64;
+	public static var TILE_HEIGHT:Int = 64;
 	static var LEVEL_WIDTH:Int = 50;
 	static var LEVEL_HEIGHT:Int = 50;
 	static var PIXEL_WIDTH:Int = TILE_WIDTH * LEVEL_WIDTH;
@@ -45,10 +45,10 @@ class PlayState extends FlxState{
 	private var cameraFocus:FlxSprite;
 
 	// Graphic Parameters
-	private var font:String;
-	private var topButtonsSize:Int;
-	private var timeSize:Int;
-	private var HUDHeight:Int;
+	public static var font:String = "Quicksand-Bold.otf";
+	public static var topButtonsSize:Int = 24;
+	public static var timeSize:Int = 18;
+	public static var HUDHeight:Int = 40;
 	
 	// HUD
 	private var hud:HUD;
@@ -66,11 +66,11 @@ class PlayState extends FlxState{
 	private var trucks:Array<FlxSprite>;
 	private var truck_paths:Array<FlxPath>;
 	private var cities:Array<City>;	
+	private var city_labels:Array<FlxText>;	
 
 	override public function create():Void{
 		super.create();
 		
-		init_parameters();
 		init_time();	
 		init_cities();	
 
@@ -182,19 +182,13 @@ class PlayState extends FlxState{
 		truck_paths = new Array<FlxPath>();
 	}
 
-	public function init_parameters(){
-		font = "Quicksand-Bold.otf";
-		topButtonsSize = 24;
-		timeSize = 18;
-		HUDHeight = 40;
-	}
-
 	public function init_graphics(){
+		city_labels = new Array<FlxText>();	
+		var label:FlxText;
 
 		terrain_map = Assets.getText("assets/data/terrain_map.csv");
 		plants_map = Assets.getText("assets/data/resources_map.csv");
 		roads_map = Assets.getText("assets/data/roads_map.csv");
-		towns_map = Assets.getText("assets/data/towns_map.csv");
 		towns_map = get_cities_map();
 
 		terrain = new FlxTilemap();
@@ -215,7 +209,15 @@ class PlayState extends FlxState{
 
 		towns = new FlxTilemap();
 		towns.loadMap(towns_map, "assets/images/towns.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
-		add(towns);		
+		add(towns);	
+
+		for(i in 0...cities.length){
+			label = new FlxText(cities[i].label_coordinate_x, cities[i].label_coordinate_y);
+			label.setFormat("assets/fonts/" + font, timeSize, FlxColor.WHITE, "center");		
+			label.text = cities[i].name;
+			add(label);
+
+		}				
 
 	}
 
