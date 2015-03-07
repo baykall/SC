@@ -1,5 +1,10 @@
 package;
 
+enum Moment {
+	NewDay;
+	OngoingDay;
+}
+
 class Time{
 	private var pace:Int;
 	private var cpu_time:Int;
@@ -9,6 +14,7 @@ class Time{
     private var month:String;
 	public var total_days:Int;	            
     public var calendar_day:String;
+    public var moment:Moment;
 
  	private var months : Array<String> = ["January","February","March","April","May","June","July","August","September","October","November","December"];
  	private var month_days : Array<Int> = [31,28,31,30,31,30,31,31,30,31,30,31];
@@ -20,6 +26,7 @@ class Time{
 	    pace = p;
 	    total_days = 0;	
 	    cpu_time = 0;
+	    moment = NewDay;
 	    for(i in 0...11){
 	        if(m == months[i]){
 	            month_no = i;
@@ -30,8 +37,12 @@ class Time{
 
 	public function update(){
 	    cpu_time++;	
-	    if(cpu_time%pace==0)
+	    if(cpu_time%pace==0){
 	    	update_day();	
+	    	moment = NewDay;
+	    }
+	    else
+	    	moment = OngoingDay;
 	} 	
 
 	public function update_day(){

@@ -73,11 +73,7 @@ class PlayState extends FlxState{
 		init_camera();	
 		init_HUD();
 		init_buttons();
-		init_time();	
-
-		ship_truck(26,34,15,6);
-		ship_truck(30,19,15,20);
-		ship_truck(30,6,17,20);		
+		init_time();		
 	}
 
 	override public function destroy():Void{
@@ -87,16 +83,31 @@ class PlayState extends FlxState{
 	override public function update():Void{
 		super.update();
 
+		// Game handling
 		move_camera();
 		bound_camera();
 		input_keyboard();
-		
-		move_trucks();
-		remove_arrived_trucks();
 
+		// Time update
 		if(state == Running)
 			update_time();
+		
+		// Game features update
+		move_trucks();
+		remove_arrived_trucks();
+		if(time.moment == NewDay)
+			execute_todays_events();
+
 	
+	}
+
+	public function execute_todays_events(){
+		if(time.total_days==2)
+			ship_truck(26,34,15,6);
+		if(time.total_days==3)
+			ship_truck(30,19,15,20);
+		if(time.total_days==4)
+			ship_truck(30,19,15,20);			
 	}
 
 	public function move_trucks(){
