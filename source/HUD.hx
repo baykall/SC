@@ -10,8 +10,10 @@ import flixel.ui.FlxButton;
 
 class HUD extends FlxSpriteGroup{
 
-	private var timeDisplay:FlxText;	
+	private var timeDisplay:FlxText;
+	private var newDisplay:FlxText;		
 	private var time:String;
+	private var value:String;	
 	
 	public function new(font, timeSize, HUDHeight){
 		super();
@@ -24,17 +26,27 @@ class HUD extends FlxSpriteGroup{
 
 		timeDisplay = new FlxText(FlxG.width - 150, 10);
 		timeDisplay.setFormat("assets/fonts/" + font, timeSize, FlxColor.WHITE, "center");	
-		add(timeDisplay);			
+		add(timeDisplay);	
+
+		newDisplay = new FlxText(50, 10);
+		newDisplay.setFormat("assets/fonts/" + font, timeSize, FlxColor.WHITE, "center");	
+		add(newDisplay);			
 
 		time = "";
+		value = "";
 	}
 	
 	override public function update(){
 		timeDisplay.text = time;
+		newDisplay.text = value;
 	}
 
 	public function update_time(cal):Void {
 		time=cal;
 	}	
+
+	public function update_hud(val):Void {
+		value=val;
+	}		
 	
 }

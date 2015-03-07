@@ -34,8 +34,12 @@ class PlayState extends FlxState{
 	private var terrain:FlxTilemap;
 	private var plants:FlxTilemap;
 	private var roads:FlxTilemap;	
-	private var cities:FlxTilemap;		
-
+	private var towns:FlxTilemap;	
+	private var terrain_map:String;	
+	private var plants_map:String;	
+	private var roads_map:String;	
+	private var towns_map:String;	
+		
 	// Camera
 	private var camera:FlxCamera;
 	private var cameraFocus:FlxSprite;
@@ -53,27 +57,29 @@ class PlayState extends FlxState{
 	private var companyButton:FlxButton;	
 	private var resourcesButton:FlxButton;	
 	private var optionsButton:FlxButton;
-
-	// Sprites
-	private var trucks:Array<FlxSprite>;
-	private var truck_paths:Array<FlxPath>;
-
 	
 	// Game engine
 	private var time:Time;
 	private var state:State;
 
+	// Game entities
+	private var trucks:Array<FlxSprite>;
+	private var truck_paths:Array<FlxPath>;
+	private var cities:Array<City>;	
 
 	override public function create():Void{
 		super.create();
 		
-		init_variables();
 		init_parameters();
+		init_time();	
+		init_cities();	
+
 		init_graphics();	
 		init_camera();	
 		init_HUD();
 		init_buttons();
-		init_time();		
+
+		init_trucks();
 	}
 
 	override public function destroy():Void{
@@ -98,12 +104,11 @@ class PlayState extends FlxState{
 		if(time.moment == NewDay)
 			execute_todays_events();
 
-	
 	}
 
 	public function execute_todays_events(){
 		if(time.total_days==2)
-			ship_truck(26,34,15,6);
+			ship_truck(26,34,16,6);
 		if(time.total_days==3)
 			ship_truck(30,19,15,20);
 		if(time.total_days==4)
@@ -121,9 +126,8 @@ class PlayState extends FlxState{
 					trucks[i].animation.play("right");
 				else if (truck_paths[i].angle == -90) 
 					trucks[i].animation.play("left");
-				
 			} 
-			else {
+			else{
 				trucks[i].animation.curAnim.curFrame = 0;
 				trucks[i].animation.curAnim.stop();
 			}
@@ -135,7 +139,7 @@ class PlayState extends FlxState{
 
 		truck_no = -1;
 		for(i in 0...trucks.length){	
-			if (truck_paths[i].finished){
+			if(truck_paths[i].finished){
 				remove(trucks[i]);		
 				truck_no = i;	
 			}
@@ -173,7 +177,7 @@ class PlayState extends FlxState{
 
 	}
 
-	public function init_variables(){
+	public function init_trucks(){
 		trucks = new Array<FlxSprite>();
 		truck_paths = new Array<FlxPath>();
 	}
@@ -186,25 +190,32 @@ class PlayState extends FlxState{
 	}
 
 	public function init_graphics(){
+
+		terrain_map = Assets.getText("assets/data/terrain_map.csv");
+		plants_map = Assets.getText("assets/data/resources_map.csv");
+		roads_map = Assets.getText("assets/data/roads_map.csv");
+		towns_map = Assets.getText("assets/data/towns_map.csv");
+		towns_map = get_cities_map();
+
 		terrain = new FlxTilemap();
-		terrain.loadMap(Assets.getText("assets/data/terrain_map.csv"), "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
+		terrain.loadMap(terrain_map, "assets/images/terrain.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);	
 		add(terrain);	
 	
 		plants = new FlxTilemap();
-		plants.loadMap(Assets.getText("assets/data/resources_map.csv"), "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		plants.loadMap(plants_map, "assets/images/resources.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(plants);
 
 		roads = new FlxTilemap();
-		roads.loadMap(Assets.getText("assets/data/roads_map.csv"), "assets/images/roads.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		roads.loadMap(roads_map, "assets/images/roads.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
 		add(roads);	
 
 		roads.setTileProperties(0, FlxObject.ANY);	
 		for(i in 1...8)
 			roads.setTileProperties(i, FlxObject.NONE);			
 
-		cities = new FlxTilemap();
-		cities.loadMap(Assets.getText("assets/data/cities_map.csv"), "assets/images/cities.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
-		add(cities);		
+		towns = new FlxTilemap();
+		towns.loadMap(towns_map, "assets/images/towns.png", TILE_WIDTH, TILE_HEIGHT, 0, 1);				
+		add(towns);		
 
 	}
 
@@ -246,6 +257,21 @@ class PlayState extends FlxState{
 		state = Running;	
 	}	
 
+	public function init_cities(){
+		cities = new Array<City>();
+
+		var city:City;
+
+		city = new City("Ann Arbor", 14, 6, [500,200,50]);
+		cities.push(city);	
+		city = new City("Atlanta", 33, 19, [400,300,50]);
+		cities.push(city);	
+		city = new City("New York", 12, 20, [1000,400,0]);
+		cities.push(city);	
+		city = new City("Phoenix", 14, 34, [800,100,25]);
+		cities.push(city);			
+	}	
+
 	public function input_keyboard(){
 	    if (FlxG.keys.justPressed.SPACE){
 			if(state == Running)
@@ -284,7 +310,6 @@ class PlayState extends FlxState{
 			cameraFocus.y = LEVEL_HEIGHT * TILE_HEIGHT - FlxG.height / 2;
 	}
 
-
 	private function goCompany():Void {
 		FlxG.switchState(new MenuState());
 	}	
@@ -295,6 +320,32 @@ class PlayState extends FlxState{
 
 	private function goOptions():Void {
 		FlxG.switchState(new MenuState());
-	}			
+	}		
+
+	private function get_cities_map():String{
+		var map = "";
+		var x_cor:Int;
+		var y_cor:Int;
+		for(row in 0...LEVEL_HEIGHT){
+			y_cor = row + 1;		
+			for(col in 0...LEVEL_WIDTH){
+				var town_loc = false;
+				x_cor = col + 1;
+				for(i in 0...cities.length){
+					if(cities[i].coordinate_x <= x_cor+1 && cities[i].coordinate_x >= x_cor-1 && cities[i].coordinate_y <= y_cor+1 && cities[i].coordinate_y >= y_cor-1)
+						town_loc = true;
+				}
+				if(town_loc == true)
+					map = map + "1";
+				else
+					map = map + "0";	
+				if(col < LEVEL_WIDTH - 1)
+					map = map + ",";	
+				else if(row < LEVEL_HEIGHT - 1)
+					map = map + "\n";														
+			}
+		}
+		return map;
+	}				
 
 }
