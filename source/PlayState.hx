@@ -47,7 +47,8 @@ class PlayState extends FlxState{
 	// Graphic Parameters
 	public static var font:String = "Quicksand-Bold.otf";
 	public static var topButtonsSize:Int = 24;
-	public static var timeSize:Int = 18;
+	public static var timeTextSize:Int = 18;
+	public static var cityTextSize:Int = 24;	
 	public static var HUDHeight:Int = 40;
 	
 	// HUD
@@ -213,7 +214,7 @@ class PlayState extends FlxState{
 
 		for(i in 0...cities.length){
 			label = new FlxText(cities[i].label_coordinate_x, cities[i].label_coordinate_y);
-			label.setFormat("assets/fonts/" + font, timeSize, FlxColor.WHITE, "center");		
+			label.setFormat("assets/fonts/" + font, cityTextSize, FlxColor.WHITE, "center");		
 			label.text = cities[i].name;
 			add(label);
 
@@ -233,7 +234,7 @@ class PlayState extends FlxState{
 	}
 
 	public function init_HUD(){
-		hud = new HUD(font, timeSize, HUDHeight);
+		hud = new HUD();
 		add(hud);		
 	}
 

@@ -15,21 +15,21 @@ class HUD extends FlxSpriteGroup{
 	private var time:String;
 	private var value:String;	
 	
-	public function new(font, timeSize, HUDHeight){
+	public function new(){
 		super();
 		scrollFactor.x = 0;
 		scrollFactor.y = 0;
 
 		var background = new FlxSprite();
-		background.makeGraphic(FlxG.width, HUDHeight, FlxColor.BLACK, true);
+		background.makeGraphic(FlxG.width, PlayState.HUDHeight, FlxColor.BLACK, true);
 		add(background);
 
 		timeDisplay = new FlxText(FlxG.width - 150, 10);
-		timeDisplay.setFormat("assets/fonts/" + font, timeSize, FlxColor.WHITE, "center");	
+		timeDisplay.setFormat("assets/fonts/" + PlayState.font, PlayState.timeTextSize, FlxColor.WHITE, "center");	
 		add(timeDisplay);	
 
 		newDisplay = new FlxText(50, 10);
-		newDisplay.setFormat("assets/fonts/" + font, timeSize, FlxColor.WHITE, "center");	
+		newDisplay.setFormat("assets/fonts/" + PlayState.font, PlayState.timeTextSize, FlxColor.WHITE, "center");	
 		add(newDisplay);			
 
 		time = "";

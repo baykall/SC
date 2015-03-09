@@ -17,5 +17,4 @@ class City{
 	    label_coordinate_x = (c_x - 1) * PlayState.TILE_WIDTH;
 	    label_coordinate_y = (c_y + 1) * PlayState.TILE_WIDTH;	    
 	} 
-
 }
