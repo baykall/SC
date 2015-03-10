@@ -1,0 +1,27 @@
+-main ApplicationMain 
+-cp /usr/lib/haxe/lib/flixel/3,3,6
+-D flixel=3.3.6
+-cp /usr/lib/haxe/lib/lime/2,1,1
+-D lime=2.1.1
+-cp /usr/lib/haxe/lib/openfl/2,2,7
+-D openfl=2.2.7
+-cp /usr/lib/haxe/lib/hxcpp/3,1,68
+-D hxcpp=3.1.68
+-cp source
+-cp /usr/lib/haxe/lib/lime/2,1,1/legacy
+-D tools=2.1.1
+-D lime-legacy
+-D FLX_NO_DEBUG
+-D no-compilation
+-D NAPE_RELEASE_BUILD
+-D native
+-D openfl-native
+-D lime-native
+-D FLX_RENDER_TILE
+-D mac
+-D desktop
+--remap flash:openfl
+-cpp export/mac64/cpp/obj/
+-cp export/mac64/cpp/haxe
+--macro keep("Main")
+-debug

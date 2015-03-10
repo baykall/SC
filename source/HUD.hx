@@ -12,7 +12,7 @@ class HUD extends FlxSpriteGroup{
 
 	private var timeDisplay:FlxText;
 	private var newDisplay:FlxText;		
-	private var time:String;
+	private var ttime:String;
 	private var value:String;	
 	
 	public function new(){
@@ -32,21 +32,21 @@ class HUD extends FlxSpriteGroup{
 		newDisplay.setFormat("assets/fonts/" + PlayState.font, PlayState.timeTextSize, FlxColor.WHITE, "center");	
 		add(newDisplay);			
 
-		time = "";
+		ttime = "";
 		value = "";
 	}
 	
 	override public function update(){
-		timeDisplay.text = time;
+		timeDisplay.text = ttime;
 		newDisplay.text = value;
 	}
 
 	public function update_time(cal):Void {
-		time=cal;
+		ttime = cal;
 	}	
 
 	public function update_hud(val):Void {
-		value=val;
+		value = val;
 	}		
 	
 }

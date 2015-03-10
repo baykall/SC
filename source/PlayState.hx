@@ -73,7 +73,7 @@ class PlayState extends FlxState{
 	private var buildModeSwitch:Bool = false;	
 
 	// Game entities
-	private var time:Time;	
+	private var ttime:TTime;	
 	private var trucks:Array<FlxSprite>;
 	private var truck_paths:Array<FlxPath>;
 	private var cities:Array<City>;	
@@ -121,7 +121,7 @@ class PlayState extends FlxState{
 			update_time();
 			move_trucks();
 			remove_arrived_trucks();
-			if(time.moment == NewDay)
+			if(ttime.mmoment == NewDay)
 				execute_todays_events();
 		}
 	}
@@ -134,7 +134,7 @@ class PlayState extends FlxState{
 	}
 
 	public function init_time(){
-		time = new Time(12, "January", 1678, 100);
+		ttime = new TTime(12, "January", 1678, 100);
 		state = Running;	
 	}	
 
@@ -338,8 +338,8 @@ class PlayState extends FlxState{
 
 	public function update_time():Void{
 		var calendar_day;
-		time.update();
-		calendar_day = time.calendar_day;
+		ttime.update();
+		calendar_day = ttime.calendar_day;
 		hud.update_time(calendar_day);
 	}
 
@@ -381,14 +381,14 @@ class PlayState extends FlxState{
 	}	
 
 	public function execute_todays_events(){
-		if(time.total_days==1)
+		if(ttime.total_days==1)
 			buildMode = WheatFarm;
-		if(time.total_days==2)
+		if(ttime.total_days==2)
 			ship_truck(26,34,16,6);
-		if(time.total_days==3)
+		if(ttime.total_days==3)
 			ship_truck(30,19,15,20);
 		
-		if(time.total_days==4){
+		if(ttime.total_days==4){
 			//hud.update_hud(get_map("Cities"));
 
 		}
